@@ -35,12 +35,11 @@
         nav a { color: var(--branco); text-decoration: none; margin-left: 20px; transition: 0.3s; font-size: 0.9rem; }
         nav a:hover { opacity: 0.7; }
 
-        /* Banner com a foto da Fachada */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fachada.jpg');
             background-size: cover;
             background-position: center;
-            height: 70vh;
+            height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -55,6 +54,30 @@
 
         .section-title { text-align: center; margin: 50px 0 10px; color: var(--azul-principal); text-transform: uppercase; font-weight: 700; }
         .section-subtitle { text-align: center; margin-bottom: 40px; color: #666; padding: 0 10px; }
+
+        /* Seção de Serviços */
+        .servicos-container {
+            background-color: var(--cinza-claro);
+            padding: 50px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        .servico-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .servico-card:hover { transform: translateY(-5px); border-color: var(--azul-principal); }
+        .servico-card i { font-size: 2.5rem; color: var(--azul-principal); margin-bottom: 15px; }
+        .servico-card h4 { font-size: 1.1rem; margin-bottom: 10px; color: var(--azul-escuro); }
+        .servico-card p { font-size: 0.9rem; color: #777; }
 
         /* Galeria de Produtos */
         .galeria {
@@ -73,24 +96,14 @@
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             border: 1px solid #eee;
-            transition: 0.3s;
         }
 
-        .galeria-item:hover { transform: translateY(-5px); }
-
-        .galeria-item img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            display: block;
-        }
-
+        .galeria-item img { width: 100%; height: 300px; object-fit: cover; display: block; }
         .galeria-info { padding: 15px; text-align: center; background: var(--cinza-claro); }
         .galeria-info h4 { color: var(--azul-principal); font-size: 1rem; }
 
         /* Localização */
         .local-container {
-            background: var(--cinza-claro);
             padding: 60px 5%;
             display: flex;
             flex-wrap: wrap;
@@ -111,31 +124,23 @@
             border-radius: 8px;
             margin-top: 20px;
             font-weight: 600;
-            transition: 0.3s;
         }
-        .btn:hover { background: var(--azul-escuro); }
 
-        /* Redes Sociais */
         .social-section { background: var(--azul-principal); color: white; text-align: center; padding: 60px 20px; }
-        .social-icons { margin-top: 20px; }
         .social-icons a { color: white; font-size: 3.5rem; margin: 0 20px; transition: 0.3s; text-decoration: none; }
-        .social-icons a:hover { transform: scale(1.2); opacity: 0.8; }
+        .social-icons a:hover { transform: scale(1.2); }
 
-        /* WhatsApp Flutuante */
         .whatsapp-float {
             position: fixed; width: 65px; height: 65px; bottom: 30px; right: 30px;
             background-color: #25d366; color: #FFF; border-radius: 50px;
             text-align: center; font-size: 35px; box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
             z-index: 1000; display: flex; justify-content: center; align-items: center; text-decoration: none;
-            transition: 0.3s;
         }
-        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
 
         footer { text-align: center; padding: 30px; background: #222; color: #888; font-size: 0.8rem; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .hero { height: 50vh; }
             nav { display: none; }
         }
     </style>
@@ -143,8 +148,9 @@
 <body>
 
     <header>
-        <div class="logo">LOJA DUAL</div>
+        <div class="logo">DUAL ELETRÔNICA</div>
         <nav>
+            <a href="#servicos">Serviços</a>
             <a href="#galeria">Produtos</a>
             <a href="#localizacao">Localização</a>
             <a href="#contato">Contato</a>
@@ -156,9 +162,34 @@
         <p>Sua melhor opção em Canapi-AL</p>
     </section>
 
-    <h2 class="section-title" id="galeria">Nossos Produtos</h2>
-    <p class="section-subtitle">Qualidade garantida em eletrônicos e acessórios para celular</p>
+    <!-- Seção de Serviços -->
+    <h2 class="section-title" id="servicos">Assistência Técnica</h2>
+    <p class="section-subtitle">Especialistas em Celulares e Informática</p>
+    
+    <div class="servicos-container">
+        <div class="servico-card">
+            <i class="fas fa-mobile-alt"></i>
+            <h4>Telas e Baterias</h4>
+            <p>Troca de tela e bateria para todas as marcas de celular.</p>
+        </div>
+        <div class="servico-card">
+            <i class="fas fa-plug"></i>
+            <h4>Conectores e Câmeras</h4>
+            <p>Reparo de carga e substituição de câmeras danificadas.</p>
+        </div>
+        <div class="servico-card">
+            <i class="fas fa-laptop-code"></i>
+            <h4>Formatação</h4>
+            <p>Celulares, Notebooks e PCs com backup de segurança.</p>
+        </div>
+        <div class="servico-card">
+            <i class="fas fa-microchip"></i>
+            <h4>Informática</h4>
+            <p>Manutenção preventiva e corretiva em computadores.</p>
+        </div>
+    </div>
 
+    <h2 class="section-title" id="galeria">Nossos Produtos</h2>
     <div class="galeria">
         <div class="galeria-item">
             <img src="caixa-som-grande.jpg" alt="Caixa de Som Potente">
@@ -183,8 +214,6 @@
             <h2 style="color: var(--azul-principal); margin-bottom: 15px;">ONDE ESTAMOS</h2>
             <p><strong><i class="fas fa-map-marker-alt"></i> Avenida Joaquim Tetê, 435</strong></p>
             <p>Centro - Canapi - AL</p>
-            <p>CEP: 57530-000</p>
-            <p style="margin-top: 15px;">📍 Localizada no coração de Canapi, pronta para te atender com a melhor assistência técnica e produtos de ponta.</p>
             <a href="https://www.google.com/maps/dir//DUAL+-+Av.+Joaquim+Tet%C3%AA,+435+-+Centro,+Canapi+-+AL" target="_blank" class="btn">VER NO GOOGLE MAPS</a>
         </div>
         <div class="mapa-box">
@@ -194,23 +223,19 @@
 
     <section class="social-section" id="contato">
         <h2>FALE CONOSCO</h2>
-        <p>Acompanhe nossas novidades ou faça seu orçamento agora!</p>
         <div class="social-icons">
-            <a href="https://www.instagram.com/dualeletro/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/5582981762242" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/dualeletro/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5582981762242" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
     </section>
 
     <footer>
-        &copy; 2026 Dual Eletrônica e Acessórios - Canapi/AL. <br>
-        Desenvolvido para facilitar sua conexão com a tecnologia.
+        &copy; 2026 Dual Eletrônica e Acessórios - Canapi/AL.
     </footer>
 
-    <!-- Botão WhatsApp Flutuante -->
     <a href="https://wa.me/5582981762242" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
 </body>
-
 </html>
